@@ -3,7 +3,7 @@ JSRC integration with Spring
 
 To run your [Spring](http://spring.io) application on [WildFly 8.1](http://wildfly.org) Application Server you can make a few simple steps. First of all `JSRC` is written on [Jersey](https://jersey.java.net) so it is very important to exclude WildFly's JSR 311 implementation [RestEasy](http://resteasy.jboss.org) from your AS and replace it with Jersey implementaion. The proper exclusions in your `WildFly Deployment Structure Descriptor` could be done in the way like this:
 
-```java
+```xml
 <jboss-deployment-structure>
     <deployment>
         <exclusions>
@@ -27,7 +27,7 @@ To run your [Spring](http://spring.io) application on [WildFly 8.1](http://wildf
 </jboss-deployment-structure>
 ```
 Also you need to include in your pom file these dependencies
-```java
+```xml
 <dependency>
     <groupId>org.glassfish.jersey.containers</groupId>
     <artifactId>jersey-container-servlet</artifactId>
